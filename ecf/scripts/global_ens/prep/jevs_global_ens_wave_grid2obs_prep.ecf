@@ -19,7 +19,7 @@ export HOMEevs=/lfs/h2/emc/vpppg/noscrub/$USER/gitworkspace/EVS
 ############################################################
 # read version file and set model_ver
 ############################################################
-versionfile=$HOMEevs/versions/run.ver
+versionfile=$HOMEevs/versions/run.ver.metplus5.0.0
 . $versionfile
 export evs_ver=$evs_ver
 export model_ver=$gefs_ver
