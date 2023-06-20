@@ -13,12 +13,12 @@ set -x
 ##%include <head.h>
 ##%include <envir-p1.h>
 
-export HOMEevs=/lfs/h2/emc/vpppg/noscrub/$USER/EVS
-
+#export HOMEevs=/lfs/h2/emc/vpppg/noscrub/$USER/EVS
+export HOMEevs=/lfs/h2/emc/vpppg/noscrub/$USER/gitworkspace/EVS
 ############################################################
 # read version file and set model_ver
 ############################################################
-versionfile=$HOMEevs/versions/run.ver
+versionfile=$HOMEevs/versions/run.ver.metplus5.0.0
 . $versionfile
 export evs_ver=$evs_ver
 export model_ver=$gefs_ver
@@ -74,14 +74,16 @@ export VERIF_CASE=grid2obs
 export DATAROOT=/lfs/h2/emc/stmp/$USER/evs_output
 export FIXevs='/lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/EVS_fix'
 export OUTPUTROOT=/lfs/h2/emc/vpppg/noscrub/$USER
-export COMIN=${OUTPUTROOT}/${NET}/${evs_ver}
+#EVS parallel directory
+export COMIN=/lfs/h2/emc/vpppg/noscrub/emc.vpppg/${NET}/${evs_ver}
+export COMOUT=${OUTPUTROOT}/${NET}/${evs_ver}/${STEP}/${COMPONENT}
 ######################################
 # Correct MET/METplus roots (Aug 2022)
 ######################################
-export MET_ROOT="/apps/ops/prod/libs/intel/${intel_ver}/met/${met_ver}"
-export MET_BASE="${MET_ROOT}/share/met"
-export METPLUS_PATH="/apps/ops/prod/libs/intel/${intel_ver}/metplus/${metplus_ver}"
-export PATH="${METPLUS_PATH}/ush:${MET_ROOT}/bin:${PATH}"
+#export MET_ROOT="/apps/ops/prod/libs/intel/${intel_ver}/met/${met_ver}"
+#export MET_BASE="${MET_ROOT}/share/met"
+#export METPLUS_PATH="/apps/ops/prod/libs/intel/${intel_ver}/metplus/${metplus_ver}"
+#export PATH="${METPLUS_PATH}/ush:${MET_ROOT}/bin:${PATH}"
 
 export run_mpi='yes'
 export gather='yes'

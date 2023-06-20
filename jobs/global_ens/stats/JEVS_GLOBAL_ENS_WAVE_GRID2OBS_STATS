@@ -58,8 +58,7 @@ export COMIN=${COMIN:-$(compath.py ${envir}/com/${NET}/${evs_ver})}
 export COMINmodel=${COMINmodel:-$(compath.py ${envir}/com/${MODELNAME}/${model_ver})}
 export ARCgefs=${COMIN}/prep/${COMPONENT}
 export COMINgdasnc=${COMIN}/prep/${COMPONENT}
-
-export COMOUT=${COMIN}/${STEP}/${COMPONENT}
+export COMOUT=${COMOUT:-${COMIN}/${STEP}/${COMPONENT}}
 export COMOUTsmall=${COMOUT}/${RUN}.${VDATE}/${MODELNAME}/${VERIF_CASE}
 export COMOUTfinal=${COMOUT}/${MODELNAME}.${VDATE}
 
