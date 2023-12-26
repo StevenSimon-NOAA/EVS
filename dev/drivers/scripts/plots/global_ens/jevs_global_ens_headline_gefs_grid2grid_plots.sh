@@ -3,8 +3,13 @@
 #PBS -S /bin/bash
 #PBS -q dev
 #PBS -A VERF-DEV
-#PBS -l walltime=00:40:00
+<<<<<<< HEAD
+#PBS -l walltime=00:30:00
 #PBS -l select=1:ncpus=1:mem=5GB
+=======
+#PBS -l walltime=00:30:00
+#PBS -l place=shared,select=1:ncpus=1:mem=5GB
+>>>>>>> develop
 #PBS -l debug=true
 
 set -x
