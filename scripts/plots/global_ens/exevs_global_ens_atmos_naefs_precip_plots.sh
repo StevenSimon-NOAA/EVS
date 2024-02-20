@@ -89,6 +89,12 @@ for stats in crps ets fbias fss bs ; do
     line_tp='pstd'
     VARs='APCP24_gt1 APCP24_gt5  APCP24_gt10 APCP24_gt25 APCP24_gt50'
     threshes=''
+  elif [ $stats = bss ] ; then
+    stat_list='bss'
+    line_tp='pstd'
+    VARs='APCP24_gt1 APCP24_gt5  APCP24_gt10 APCP24_gt25 APCP24_gt50'
+    threshes=''
+
   elif [ $stats = crps  ] ; then
     stat_list='crps'
     line_tp='ecnt'
@@ -249,7 +255,7 @@ for domain in conus conus_east conus_west conus_south conus_central ; do
     elif [ $domain = conus_central ]; then
         evs_graphic_domain="buk_conus_c"
     fi
-    for stat in bs crps ets fbias fss ; do
+    for stat in bs bss crps ets fbias fss ; do
         if [ $stat = crps ]; then
             threshs="NA"
         else
