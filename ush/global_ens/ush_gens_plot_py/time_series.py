@@ -1034,9 +1034,7 @@ def plot_time_series(df: pd.DataFrame, logger: logging.Logger,
         title1 = f'{metric1_string} and {metric2_string}'
     else:
         title1 = f'{metric1_string}'
-    if metric1_string == 'Brier Score':
-        thresh = ''
-    if metric1_string == 'Brier Skill Score':
+    if metric1_string == 'Brier Score' or metric1_string == 'Brier Skill Score':
         thresh = ''
     if interp_pts and '' not in interp_pts:
         title1+=f' {interp_pts_string}'

@@ -1138,10 +1138,7 @@ def plot_lead_average(df: pd.DataFrame, logger: logging.Logger,
         title1+=f' {interp_pts_string}'
     fcst_thresh_on = (fcst_thresh and '' not in fcst_thresh)
     obs_thresh_on = (obs_thresh and '' not in obs_thresh)
-    if metric1_string == 'Brier Score':
-        fcst_thresh_on = False
-        obs_thresh_on = False
-    if metric1_string == 'Brier Skill Score': 
+    if metric1_string == 'Brier Score' or metric1_string == 'Brier Skill Score':
         fcst_thresh_on = False
         obs_thresh_on = False
     if fcst_thresh_on:
