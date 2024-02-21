@@ -68,7 +68,7 @@ verif_type=ccpa
 # ****************************************
 > run_all_poe.sh
 
-for stats in crps ets fbias fss bs ; do 
+for stats in crps ets fbias fss bs bss ; do 
   if [ $stats = ets ] ; then
     stat_list='ets'
     line_tp='ctc'
