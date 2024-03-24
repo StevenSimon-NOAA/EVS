@@ -9,7 +9,7 @@
 
 set -x
 export OMP_NUM_THREADS=1
-export HOMEevs=/lfs/h2/emc/vpppg/noscrub/${USER}/EVS
+export HOMEevs=/lfs/h2/emc/vpppg/noscrub/${USER}/wpcworkspace/EVS
 source $HOMEevs/versions/run.ver
 
 export envir=prod
@@ -32,8 +32,8 @@ export KEEPDATA=YES
 #This var is only for testing, if not set, then run operational 
 
 export vhr=00
-export COMIN=/lfs/h2/emc/vpppg/noscrub/${USER}/$NET/$evs_ver_2d
-export COMOUT=/lfs/h2/emc/vpppg/noscrub/${USER}/$NET/$evs_ver_2d
+export COMIN=/lfs/h2/emc/vpppg/noscrub/${USER}/wpc_archive/$NET/$evs_ver_2d
+export COMOUT=/lfs/h2/emc/vpppg/noscrub/${USER}/wpc_archive/$NET/$evs_ver_2d
 export DATAROOT=/lfs/h2/emc/stmp/${USER}/evs_test/$envir/tmp
 
 export job=${PBS_JOBNAME:-jevs_${MODELNAME}_${VERIF_CASE}_${STEP}}

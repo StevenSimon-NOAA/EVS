@@ -9,7 +9,7 @@
 
 set -x
 
-export HOMEevs=/lfs/h2/emc/vpppg/noscrub/${USER}/EVS
+export HOMEevs=/lfs/h2/emc/vpppg/noscrub/${USER}/wpcworkspace/EVS
 source $HOMEevs/versions/run.ver
 
 export envir=prod
@@ -30,8 +30,8 @@ evs_ver_2d=$(echo $evs_ver | cut -d'.' -f1-2)
 export KEEPDATA=YES
 
 export vhr=00
-export COMIN=/lfs/h2/emc/vpppg/noscrub/${USER}/$NET/$evs_ver_2d
-export COMOUT=/lfs/h2/emc/vpppg/noscrub/${USER}/$NET/$evs_ver_2d
+export COMIN=/lfs/h2/emc/vpppg/noscrub/${USER}/wpc_archive/$NET/$evs_ver_2d
+export COMOUT=/lfs/h2/emc/vpppg/noscrub/${USER}/wpc_archive/$NET/$evs_ver_2d
 export DATAROOT=/lfs/h2/emc/stmp/${USER}/evs_test/$envir/tmp
 export job=${PBS_JOBNAME:-jevs_${MODELNAME}_${VERIF_CASE}_${STEP}}
 export jobid=$job.${PBS_JOBID:-$$}
