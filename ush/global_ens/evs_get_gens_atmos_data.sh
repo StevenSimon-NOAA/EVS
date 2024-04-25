@@ -203,8 +203,10 @@ if [ $modnam = gefs ] ; then
 
 
   for ihour in $gens_ihour  ; do
-    origin=$COMINgefs/gefs.$vday/$ihour/atmos/pgrb2ap5
-    origin_cvc=$COMINgefs/gefs.$vday/$ihour/atmos/pgrb2bp5
+    #origin=$COMINgefs/gefs.$vday/$ihour/atmos/pgrb2ap5
+    #origin_cvc=$COMINgefs/gefs.$vday/$ihour/atmos/pgrb2bp5
+    origin=$COMINgefs/gefs.$vday/$ihour/atmos
+    origin_cvc=$COMINgefs/gefs.$vday/$ihour/atmos
     mbr=1
     while [ $mbr -le $total ] ; do
       mb=$mbr
