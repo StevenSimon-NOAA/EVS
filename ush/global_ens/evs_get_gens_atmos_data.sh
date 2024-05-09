@@ -26,6 +26,8 @@ fhr_end=$4
 export vday=${INITDATE:-$PDYm2}    #for ensemble, use past-2 day as validation day
 export vdate=${vdate:-$vday$ihour}
 
+date_switch=20200922
+
 cd $WORK
 
 ####################################################################################
@@ -161,8 +163,11 @@ fi
 #        specified by $gens_ihour
 ###########################################################
 if [ $modnam = gefs ] ; then
-  total=30
-
+  if [[ "$vday" > "$date_switch" ]]; then
+    total=30
+  else
+    total=20
+  fi
   if [ ! -s $WORK/gefs.ens30.t12z.grid3.f384.grib2 ] ; then
     tmpDir=$WORK/${modnam}.${fhr_beg}
     mkdir -p $tmpDir
@@ -215,8 +220,13 @@ if [ $modnam = gefs ] ; then
       while [ $nfhrs -le $fhr_end ] ; do
         hhh=$nfhrs
         typeset -Z3 hhh
-        gefs=$origin/gep${mb}.t${ihour}z.pgrb2a.0p50.f${hhh}
-        gefs_cvc=$origin_cvc/gep${mb}.t${ihour}z.pgrb2b.0p50.f${hhh} 
+	if [[ "$vday" > "$date_switch" ]]; then
+          gefs=$origin/gep${mb}.t${ihour}z.pgrb2a.0p50.f${hhh}
+          gefs_cvc=$origin_cvc/gep${mb}.t${ihour}z.pgrb2b.0p50.f${hhh}
+	else
+	  gefs=$origin/gep${mb}.t${ihour}z.pgrb2af${hhh}
+          gefs_cvc=$origin_cvc/gep${mb}.t${ihour}z.pgrb2bf${hhh}
+        fi	  
         >$WORK/gefs.upper.${ihour}.${mb}.${hhh}
         >$WORK/gefs.sfc.${ihour}.${mb}.${hhh}
         if [ -s $gefs ]; then
