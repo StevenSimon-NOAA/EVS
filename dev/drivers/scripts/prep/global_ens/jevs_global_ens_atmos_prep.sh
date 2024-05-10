@@ -33,7 +33,7 @@ export KEEPDATA=YES
 
 export vhr=00
 export COMIN=/lfs/h2/emc/vpppg/noscrub/${USER}/wpc_hist_archive/$NET/$evs_ver_2d
-export COMINgefs=/lfs/h2/emc/vpppg/noscrub/${USER}/nodd_output
+export COMINgefs=/lfs/h2/emc/pgctemp/${USER}/nodd_output
 export COMINgfs=/lfs/h2/emc/vpppg/noscrub/${USER}/GEFSarchive/data
 export COMINccpa=/lfs/h2/emc/vpppg/noscrub/${USER}/GEFSarchive/data
 export COMINobsproc=/lfs/h2/emc/vpppg/noscrub/${USER}/GEFSarchive/data
